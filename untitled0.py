@@ -93,4 +93,4 @@ test_eval = fashion_model.evaluate(test_X, test_Y_one_hot, verbose=0)
 print('Test loss:', test_eval[0])
 print('Test accuracy:', test_eval[1])
 
-fashion_train.fashion_train['accuracy']
+
