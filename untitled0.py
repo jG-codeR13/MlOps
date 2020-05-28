@@ -79,15 +79,15 @@ fashion_model.add(LeakyReLU(alpha=0.1))
 fashion_model.add(Dense(num_classes, activation='softmax'))
 
 fashion_model.compile(loss=keras.losses.categorical_crossentropy, optimizer=keras.optimizers.Adam(),metrics=['accuracy'])
-
-history = fashion_model.fit(train_X, train_label, epochs=10,
+epo=10
+history = fashion_model.fit(train_X, train_label, epochs=epo,
                     validation_data=(valid_X, valid_label))
 
 e=history.history['accuracy'][9]
 
 print(e)
 
-fashion_train = fashion_model.fit(train_X, train_label, batch_size=batch_size,epochs=epochs,verbose=1,validation_data=(valid_X, valid_label))
+fashion_train = fashion_model.fit(train_X, train_label, batch_size=batch_size,epochs=epo,verbose=1,validation_data=(valid_X, valid_label))
 
 test_eval = fashion_model.evaluate(test_X, test_Y_one_hot, verbose=0)
 print('Test loss:', test_eval[0])
